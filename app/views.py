@@ -43,7 +43,7 @@ class CallbackView(View):
     #reply = event.message.text
     client = pya3rt.TalkClient(talk_api)
     response = client.talk(event.message.text)
-    reply = response['results']['reply']
+    reply = response['results'][0]['reply']
 
     line_bot_api.reply_message(
       event.reply_token,
